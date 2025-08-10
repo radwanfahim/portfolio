@@ -24,7 +24,7 @@ const Contact = () => {
           presence to the next level?
         </h1>
 
-        <p class="text-center  text-[#C1C2D3]">
+        <p class="text-center  text-[#C1C2D3] capitalize">
           Reach out to me today and let's discuss how I can help you achieve
           your goals.
         </p>
