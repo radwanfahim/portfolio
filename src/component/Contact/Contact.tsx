@@ -18,7 +18,7 @@ const Contact = () => {
         data-aos-duration="1000"
         data-aos-delay="300"
       >
-        <h1 class="font-bold md:text-[48px] text-3xl mb-5 text-center leading-relaxed">
+        <h1 class="font-bold md:text-[48px] text-3xl mb-5 text-center leading-relaxed capitalize">
           Ready to take <span class="text-[#cbacf9]">your</span> digital
           <br />
           presence to the next level?
