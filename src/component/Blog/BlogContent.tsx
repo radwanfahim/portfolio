@@ -1,23 +1,8 @@
-import { createSignal, For, onMount } from "solid-js";
+import { For } from "solid-js";
 import { AiOutlinePlus } from "solid-icons/ai";
-import { supabase } from "../../lib/supabaseClient";
-
-interface BlogExpContentProps {
-  img: string;
-  title: string;
-  description: string;
-  url: string;
-}
+import BlogData from "../../api/BlogData";
 
 const BlogContent = () => {
-  const [data, setData] = createSignal<BlogExpContentProps[]>([]);
-
-  onMount(async () => {
-    const { data: portfolio, error } = await supabase.from("blog").select("*");
-
-    if (error) console.error("Fetch error:", error);
-    else setData(portfolio as BlogExpContentProps[]);
-  });
   return (
     <div class="container mx-auto pt-20 pb-20 flex flex-col justify-center items-center text-[#e4ecff] relative z-10">
       <h1 class="capitalize text-3xl savate font-bold mb-12">
@@ -31,7 +16,7 @@ const BlogContent = () => {
         data-aos-duration="1000"
         data-aos-delay="300"
       >
-        <For each={data()}>
+        <For each={BlogData}>
           {(item) => (
             <div class="bg-linear-to-tr from-[#04071D] to-[#0C0E23] border border-[#36374949] shadow-xl rounded-3xl flex justify-between md:flex-row flex-col-reverse gap-7 items-center relative  ">
               {/* plus */}
@@ -58,7 +43,9 @@ const BlogContent = () => {
               </div>
 
               <img
-                class="object-fill md:w-[300px] w-full  h-[240px] md:rounded-r-3xl rounded-t-3xl md:rounded-t-none"
+                width={200}
+                height={200}
+                class="object-fill bg-cover bg-center md:w-[300px] w-full  h-[240px] md:rounded-r-3xl rounded-t-3xl md:rounded-t-none"
                 src={item.img}
                 alt=""
               />

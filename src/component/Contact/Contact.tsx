@@ -1,10 +1,7 @@
 import bgContact from "../../assets/contact-bg.png";
-import { links } from "../../lib/linkStorage";
 import Footer from "../../Shared/Footer/Footer";
 
 const Contact = () => {
-  const emailLink = () => links().find((l) => l.name === "email")?.url || "#";
-
   return (
     <section
       id="contact"
@@ -30,7 +27,7 @@ const Contact = () => {
         </p>
 
         {/* email btn */}
-        <a href={`mailto:${emailLink()}`} rel="noopener noreferrer">
+        <a href={``} rel="noopener noreferrer">
           <button class="mt-10 bg-gradient-to-tl hover:cursor-pointer from-[#161A31] to-[#06091F] rounded-md text-white px-7 py-3 flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-2xl">
             <div class="text-[#e4ecff]">Contact Me</div>
           </button>

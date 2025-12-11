@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.15.3",
-    "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/vite": "^4.1.8",
     "aos": "^2.3.4",
     "embla-carousel-autoplay": "^8.6.0",

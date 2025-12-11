@@ -1,28 +1,10 @@
 import cardBgImg from "../../assets/projects card bg.png";
-import { createSignal, For, onMount } from "solid-js";
-import { supabase } from "../../lib/supabaseClient";
-import { FaSolidArrowRightLong } from "solid-icons/fa";
+import { For } from "solid-js";
 
-interface PortfolioItem {
-  id: number;
-  image_url: string;
-  title: string;
-  details: string;
-  project_link: string;
-}
+import { FaSolidArrowRightLong } from "solid-icons/fa";
+import PortFolioData from "../../api/PortFolioData";
 
 const ProjectsContent = () => {
-  const [data, setData] = createSignal<PortfolioItem[]>([]);
-
-  onMount(async () => {
-    const { data: portfolio, error } = await supabase
-      .from("portfolio")
-      .select("*");
-
-    if (error) console.error("Fetch error:", error);
-    else setData(portfolio as PortfolioItem[]);
-  });
-
   return (
     <div class="container mx-auto pt-20 flex flex-col justify-center items-center text-[#e4ecff] relative z-10">
       <h1 class="capitalize text-3xl savate font-bold">
@@ -36,7 +18,7 @@ const ProjectsContent = () => {
         data-aos-duration="1000"
         data-aos-delay="300"
       >
-        <For each={data()}>
+        <For each={PortFolioData}>
           {(item) => (
             <div class="bg-linear-to-tr from-[#04071D] to-[#0C0E23] border border-[#36374949] shadow-xl rounded-3xl h-[400px] w-96">
               <div class="bg-[#13162D] w-80 h-50 mt-5 block mx-auto rounded-xl relative overflow-clip">
@@ -47,8 +29,10 @@ const ProjectsContent = () => {
                 />
                 <div class="w-64 rotate-3 z-10 absolute top-8 right-1/2 transform translate-x-1/2">
                   <img
+                    width={200}
+                    height={200}
                     class="rounded-xl object-cover w-full h-[200px]"
-                    src={item?.image_url}
+                    src={item?.image}
                     alt={item?.title}
                   />
                 </div>
@@ -56,11 +40,11 @@ const ProjectsContent = () => {
               <div class="px-10 py-5">
                 <h1 class="font-bold text-xl">{item?.title}</h1>
                 <h1 class="mt-4 mb-6 font-light text-sm text-justify line-clamp-2">
-                  {item?.details}
+                  {item?.description}
                 </h1>
 
                 <a
-                  href={item?.project_link}
+                  href={item?.link}
                   target="_blank"
                   class="inline-flex items-center text-[#cbacf9] hover:underline transition-all duration-300 "
                 >
