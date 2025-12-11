@@ -11,9 +11,7 @@ const Footer = () => {
           {
             <For
               each={LinkData.filter((f) =>
-                ["github", "twitter", "fiverr", "linkedin", "email"].includes(
-                  f.name
-                )
+                ["github", "twitter", "fiverr", "linkedin"].includes(f.name)
               )}
             >
               {(item) => {
