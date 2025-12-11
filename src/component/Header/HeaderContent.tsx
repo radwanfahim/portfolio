@@ -1,5 +1,4 @@
 import { SolidTyper } from "solid-typer";
-import { AiOutlineDownload } from "solid-icons/ai";
 import { For } from "solid-js";
 import LinkData from "../../api/LinkData";
 
@@ -46,12 +45,23 @@ const HeaderContent = () => {
       </div>
 
       {/* resume */}
-      <a href="" target="_blank" rel="noopener noreferrer">
-        <button class="md:mt-20 mt-10 bg-gradient-to-tl hover:cursor-pointer from-white/10 to-[#02051b]  rounded-2xl text-white px-7 py-3 flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-2xl">
-          <div class="text-[#e4ecff]">Download Resume</div>
-          <AiOutlineDownload class="text-2xl animate-bounce" />
-        </button>
-      </a>
+      {
+        <For each={LinkData.filter((f) => ["resume"].includes(f.name))}>
+          {(item) => {
+            const Icon = item?.icon;
+            return (
+              <a href={item?.url} target="_blank" rel="noopener noreferrer">
+                <button class="md:mt-20 mt-10 bg-gradient-to-tl hover:cursor-pointer from-white/10 to-[#02051b]  rounded-2xl text-white px-7 py-3 flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-2xl">
+                  <div class="text-[#e4ecff]">Download Resume</div>
+                  <div class="text-2xl animate-bounce">
+                    <Icon />
+                  </div>
+                </button>
+              </a>
+            );
+          }}
+        </For>
+      }
     </div>
   );
 };
