@@ -31,7 +31,7 @@ const LinkData: Link[] = [
   {
     name: "resume",
     icon: AiOutlineDownload,
-    url: "https://drive.google.com/file/d/1WeNwkXR8nC1_1PbTFbHB1baaepbmQSsD/view?usp=sharing",
+    url: "https://drive.google.com/file/d/1ODQx0hPLPECTr8Vr4Sr4NPXpoByMJbJZ/view?usp=sharing",
   },
   {
     name: "linkedin",
