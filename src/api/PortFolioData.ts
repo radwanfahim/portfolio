@@ -34,6 +34,13 @@ const PortFolioData: PortFolio[] = [
       "Royal Mint Properties is an estate and letting agency based in London. They offer residential properties for sale and rent, including luxury apartments and townhouses",
     link: "https://royalmintproperties.com/",
   },
+  {
+    title: "Haul Swift LLC",
+    image: "/Haul-Swift-LLC.png",
+    description:
+      "Haul Swift Llc is a logistics and transportation company specializing in fast and reliable delivery services across multiple regions.",
+    link: "https://haulswiftllc.com/",
+  },
 ];
 
 export default PortFolioData;
