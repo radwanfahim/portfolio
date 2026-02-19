@@ -21,7 +21,7 @@ function App() {
   });
 
   return (
-    <>
+    <main>
       <Show when={loading()}>
         <Loading />
       </Show>
@@ -33,7 +33,7 @@ function App() {
         </Router>
         <Scroll />
       </div>
-    </>
+    </main>
   );
 }
 

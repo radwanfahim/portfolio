@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.8",
     "aos": "^2.3.4",
@@ -19,7 +20,8 @@
     "solid-js": "^1.9.5",
     "solid-motionone": "^1.0.4",
     "solid-typer": "^0.0.3",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "vite-plugin-sitemap": "^0.8.2"
   },
   "devDependencies": {
     "typescript": "~5.8.3",
