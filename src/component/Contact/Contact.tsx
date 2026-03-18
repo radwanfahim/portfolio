@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import LinkData from "../../api/LinkData";
 import bgContact from "../../assets/contact-bg.png";
 import Footer from "../../Shared/Footer/Footer";
+import { trackEvent } from "../../utils/analytics";
 
 const Contact = () => {
   return (
@@ -33,7 +34,13 @@ const Contact = () => {
           <For each={LinkData.filter((f) => ["email"].includes(f.name))}>
             {(item) => {
               return (
-                <a href={`mailto:${item?.url}`} rel="noopener noreferrer">
+                <a
+                  onClick={() =>
+                    trackEvent("contact_click", item?.name ?? "email")
+                  }
+                  href={`mailto:${item?.url}`}
+                  rel="noopener noreferrer"
+                >
                   <button class="mt-10 bg-gradient-to-tl hover:cursor-pointer from-[#161A31] to-[#06091F] rounded-md text-white px-7 py-3 flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-2xl">
                     <div class="text-[#e4ecff]">Contact Me</div>
                   </button>

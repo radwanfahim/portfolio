@@ -1,8 +1,8 @@
 import cardBgImg from "../../assets/projects card bg.png";
 import { For } from "solid-js";
-
 import { FaSolidArrowRightLong } from "solid-icons/fa";
 import PortFolioData from "../../api/PortFolioData";
+import { trackEvent } from "../../utils/analytics";
 
 const ProjectsContent = () => {
   return (
@@ -11,7 +11,6 @@ const ProjectsContent = () => {
         My recent <span class="text-[#cbacf9]">projects</span>
       </h1>
 
-      {/* card */}
       <div
         class="pt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-10"
         data-aos="fade-up"
@@ -42,13 +41,15 @@ const ProjectsContent = () => {
                 <h1 class="mt-4 mb-6 font-light text-sm text-justify line-clamp-2">
                   {item?.description}
                 </h1>
-
                 <a
                   href={item?.link}
                   target="_blank"
-                  class="inline-flex items-center text-[#cbacf9] hover:underline transition-all duration-300 "
+                  class="inline-flex items-center text-[#cbacf9] hover:underline transition-all duration-300"
+                  onClick={() =>
+                    trackEvent("project_click", item?.title ?? "unknown")
+                  }
                 >
-                  <div class="mr-2 ">Check Live Site</div>
+                  <div class="mr-2">Check Live Site</div>
                   <FaSolidArrowRightLong class="text-sm -rotate-45" />
                 </a>
               </div>

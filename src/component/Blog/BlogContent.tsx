@@ -1,6 +1,7 @@
 import { For } from "solid-js";
 import { AiOutlinePlus } from "solid-icons/ai";
 import BlogData from "../../api/BlogData";
+import { trackEvent } from "../../utils/analytics";
 
 const BlogContent = () => {
   return (
@@ -34,6 +35,9 @@ const BlogContent = () => {
                   {item?.description}
                 </p>
                 <a
+                  onClick={() =>
+                    trackEvent("blog_click", item?.title ?? "unknown")
+                  }
                   href={item.url}
                   target="_blank"
                   class="text-[#cbacf9] hover:underline capitalize"

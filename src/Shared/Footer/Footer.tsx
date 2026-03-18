@@ -1,5 +1,6 @@
 import { For, type Component } from "solid-js";
 import LinkData from "../../api/LinkData";
+import { trackEvent } from "../../utils/analytics";
 
 const Footer = () => {
   return (
@@ -11,13 +12,20 @@ const Footer = () => {
           {
             <For
               each={LinkData.filter((f) =>
-                ["github", "twitter", "fiverr", "linkedin"].includes(f.name)
+                ["github", "twitter", "fiverr", "linkedin"].includes(f.name),
               )}
             >
               {(item) => {
                 const Icon = item?.icon as Component;
                 return (
-                  <a href={item?.url} target="_blank" rel="noopener noreferrer">
+                  <a
+                    onClick={() =>
+                      trackEvent("social_click", item?.name ?? "unknown")
+                    }
+                    href={item?.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button class=" relative overflow-hidden text-[#e4ecff]  p-3 rounded-2xl bg-[rgba(255,255,255,0.1)] border-[rgba(255,255,255,0.2)] border backdrop:blur-2xl shadow-2xl transition-all duration-300 hover:bg-[rgba(255,255,255,0.2)] hover:cursor-pointer hover:scale-105">
                       <span
                         class={`absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.3)] to-transparent opacity-0 hover:opacity-100  transition-all duration-300`}
