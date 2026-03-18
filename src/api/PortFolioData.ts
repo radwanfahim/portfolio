@@ -48,6 +48,12 @@ const PortFolioData: PortFolio[] = [
       "Haul Swift Llc is a logistics and transportation company specializing in fast and reliable delivery services across multiple regions.",
     link: "https://haulswiftllc.com/",
   },
+  {
+    title: "Nodezap",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg",
+    description: "Production-ready Express.js app scaffolder — zap in seconds.",
+    link: "https://www.npmjs.com/package/nodezap",
+  },
 ];
 
 export default PortFolioData;

@@ -1,10 +1,19 @@
 import cardBgImg from "../../assets/projects card bg.png";
-import { For } from "solid-js";
+import { For, createSignal } from "solid-js";
 import { FaSolidArrowRightLong } from "solid-icons/fa";
 import PortFolioData from "../../api/PortFolioData";
 import { trackEvent } from "../../utils/analytics";
 
+const INITIAL_COUNT = 3;
+
 const ProjectsContent = () => {
+  const [showAll, setShowAll] = createSignal(false);
+
+  const visibleProjects = () =>
+    showAll() ? PortFolioData : PortFolioData.slice(0, INITIAL_COUNT);
+
+  const hasMore = PortFolioData.length > INITIAL_COUNT;
+
   return (
     <div class="container mx-auto pt-20 flex flex-col justify-center items-center text-[#e4ecff] relative z-10">
       <h1 class="capitalize text-3xl savate font-bold">
@@ -17,7 +26,7 @@ const ProjectsContent = () => {
         data-aos-duration="1000"
         data-aos-delay="300"
       >
-        <For each={PortFolioData}>
+        <For each={visibleProjects()}>
           {(item) => (
             <div class="bg-linear-to-tr from-[#04071D] to-[#0C0E23] border border-[#36374949] shadow-xl rounded-3xl h-[400px] w-96">
               <div class="bg-[#13162D] w-80 h-50 mt-5 block mx-auto rounded-xl relative overflow-clip">
@@ -57,6 +66,22 @@ const ProjectsContent = () => {
           )}
         </For>
       </div>
+
+      {hasMore && (
+        <button
+          onClick={() => setShowAll((prev) => !prev)}
+          class="md:mt-20 mt-10 bg-gradient-to-tl hover:cursor-pointer from-white/10 to-[#02051b] rounded-2xl text-white px-7 py-3 flex items-center gap-3 hover:scale-105 transition-all duration-300 shadow-2xl"
+        >
+          <div class="text-[#e4ecff]">
+            {showAll() ? "Show Less" : "See More Projects"}
+          </div>
+          <div class="text-2xl animate-bounce">
+            <FaSolidArrowRightLong
+              class={showAll() ? "rotate-90 text-sm" : "-rotate-45 text-sm"}
+            />
+          </div>
+        </button>
+      )}
     </div>
   );
 };
