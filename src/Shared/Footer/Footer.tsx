@@ -3,10 +3,12 @@ import LinkData from "../../api/LinkData";
 import { trackEvent } from "../../utils/analytics";
 
 const Footer = () => {
+   const year = new Date().getFullYear();
+  
   return (
     <footer class="container mx-auto relative ">
       <div class="absolute bottom-0 text-[#e4ecff] flex flex-between md:flex-row flex-col md:gap-0 gap-5 items-center justify-between w-full md:px-10 px-0">
-        <h1 class="text-sm">Copyright ©2025 Radwan Fahim</h1>
+        <h1 class="text-sm">Copyright ©{year} Radwan Fahim</h1>
         {/* social */}
         <div class="flex gap-4">
           {
