@@ -30,9 +30,16 @@ const BlogData: Blog[] = [
   {
     title: "5 key Skills for modern programmers",
     description:
-      ") Collaboration: Today's projects require developers, designers, and product managers to work together seamlessly. Collaboration skills are essential to ensuring a project is completed on time and to specifications.",
+      "Collaboration: Today's projects require developers, designers, and product managers to work together seamlessly. Collaboration skills are essential to ensuring a project is completed on time and to specifications.",
     img: "/5-key-Skills-for-modern-programmers.jpg",
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7068965706230345728/",
+  },
+  {
+    title: "Why Every Business Needs a Website in 2026",
+    description:
+      "Most customers have already made up their mind before they walk through your door based on what they found online. If nothing comes up when they search your name, some of them will assume you’re closed, or too small to bother with, or not worth the trip.",
+    img: "/Why-Every-Business-Needs-a-Website-in-2026.png",
+    url: "https://radwanfahim.substack.com/p/why-every-business-needs-a-website",
   },
 ];
 
