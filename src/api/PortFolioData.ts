@@ -54,6 +54,14 @@ const PortFolioData: PortFolio[] = [
     description: "Production-ready Express.js app scaffolder — zap in seconds.",
     link: "https://www.npmjs.com/package/nodezap",
   },
+  {
+    title: "LeadSpy - Web Crawler",
+    image:
+      "https://addons.mozilla.org/user-media/addon_icons/2991/2991148-64.png?modified=2d573e8e",
+    description:
+      "Deep web crawler: auto-discovers emails, phones, socials &amp; contacts across entire websites.",
+    link: "https://addons.mozilla.org/en-US/firefox/addon/leadspy-web-crawler",
+  },
 ];
 
 export default PortFolioData;
