@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://johndoe.dev/sitemap.xml
+Sitemap: http://radwan-fahim.netlify.app/sitemap.xml
