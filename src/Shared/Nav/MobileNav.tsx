@@ -1,15 +1,17 @@
-import { createSignal } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { AiOutlineMenu, AiOutlineClose } from "solid-icons/ai";
+import { A } from "@solidjs/router";
+import NavData from "../../api/NavData";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = createSignal(false);
 
-  const scrollToSection = (id: any) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToSection = (id: any) => {
+  //   const section = document.getElementById(id);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <nav class="absolute top-0 left-0 w-full md:hidden z-50">
@@ -43,51 +45,21 @@ const MobileNav = () => {
         }`}
       >
         <ul class="flex flex-col items-center gap-6 py-6 text-white text-lg font-medium select-none">
-          <li
-            onClick={() => {
-              scrollToSection("projects");
-              setIsOpen(false);
+          <For each={NavData}>
+            {(nav) => {
+              return (
+                <li
+                  // onClick={() => {
+                  //   scrollToSection(`${navData.link}`);
+                  //   setIsOpen(false);
+                  // }}
+                  class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
+                >
+                  <A href={`#${nav.link}`}>{nav.text}</A>
+                </li>
+              );
             }}
-            class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
-          >
-            Projects
-          </li>
-          <li
-            onClick={() => {
-              scrollToSection("work-experience");
-              setIsOpen(false);
-            }}
-            class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
-          >
-            Work Experience
-          </li>
-          <li
-            onClick={() => {
-              scrollToSection("skills");
-              setIsOpen(false);
-            }}
-            class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
-          >
-            Skills
-          </li>
-          <li
-            onClick={() => {
-              scrollToSection("blog");
-              setIsOpen(false);
-            }}
-            class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
-          >
-            Blog
-          </li>
-          <li
-            onClick={() => {
-              scrollToSection("contact");
-              setIsOpen(false);
-            }}
-            class="cursor-pointer transition-colors duration-200 hover:text-[#cbacf9]"
-          >
-            Contact
-          </li>
+          </For>
         </ul>
       </div>
     </nav>

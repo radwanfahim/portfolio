@@ -1,4 +1,4 @@
-import { MetaProvider, Title, Meta, Link } from "@solidjs/meta";
+import { Title, Meta, Link } from "@solidjs/meta";
 import Blog from "./component/Blog/Blog";
 import Contact from "./component/Contact/Contact";
 import Header from "./component/Header/Header";
@@ -8,24 +8,24 @@ import WorkExp from "./component/WorkExp/WorkExp";
 
 const Root = () => {
   return (
-    <MetaProvider>
+    <>
       {/* SEO Meta Tags */}
-      <Title>Radwan Fahim — Frontend Developer</Title>
+      <Title>Radwan Fahim — Full-Stack Developer</Title>
       <Meta charset="utf-8" />
       <Meta name="viewport" content="width=device-width, initial-scale=1" />
       <Meta
         name="description"
-        content="Radwan Fahim is a frontend developer skilled in React, SolidJS and modern web technologies. View my projects, skills and experience."
+        content="Radwan Fahim is a Full-Stack Developer skilled in React, SolidJS and modern web technologies. View my projects, skills and experience."
       />
       <Meta name="robots" content="index, follow" />
-      <Meta name="author" content="Radwan FAhim" />
+      <Meta name="author" content="Radwan Fahim" />
 
       {/* Open Graph */}
       <Meta property="og:type" content="website" />
-      <Meta property="og:title" content="Radwan Fahim — Frontend Developer" />
+      <Meta property="og:title" content="Radwan Fahim — Full-Stack Developer" />
       <Meta
         property="og:description"
-        content="Frontend developer skilled in React, SolidJS and modern web technologies."
+        content="Radwan Fahim is a Full-Stack Developer skilled in React, SolidJS and modern web technologies. View my projects, skills and experience."
       />
       <Meta property="og:url" content="https://radwan-fahim.netlify.app/" />
       <Meta property="og:image" content="/logo.png" />
@@ -50,7 +50,7 @@ const Root = () => {
       <Skills />
       <Blog />
       <Contact />
-    </MetaProvider>
+    </>
   );
 };
 

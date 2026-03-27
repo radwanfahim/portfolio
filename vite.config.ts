@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     solid(),
     tailwindcss(),
+
     sitemap({
       hostname: "https://radwan-fahim.netlify.app/",
       dynamicRoutes: ["/"],

@@ -6,6 +6,7 @@ import HeaderContent from "./HeaderContent";
 const Header = () => {
   return (
     <section
+      id="home"
       class="sora h-screen w-full bg-[#02051b] bg-no-repeat bg-cover bg-center relative"
       style={"background-image:url(" + backgroundGrid + ")"}
     >

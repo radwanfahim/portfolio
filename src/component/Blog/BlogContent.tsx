@@ -32,7 +32,7 @@ const BlogCard = (props: { item: (typeof BlogData)[0]; index: number }) => {
         opacity: visible() ? 1 : 0,
         transform: visible() ? "translateY(0px)" : "translateY(40px)",
       }}
-      class="bg-linear-to-tr from-[#04071D] to-[#0C0E23] border border-[#36374949] shadow-xl rounded-3xl flex justify-between md:flex-row flex-col-reverse gap-7 items-center relative overflow-hidden"
+      class="bg-linear-to-tr from-[#04071D] to-[#0C0E23] border border-[#36374949] shadow-xl rounded-xl flex justify-between md:flex-row flex-col-reverse gap-7 items-center relative overflow-hidden"
     >
       {/* plus corner decorators */}
       <div class="md:block hidden">
@@ -49,8 +49,9 @@ const BlogCard = (props: { item: (typeof BlogData)[0]; index: number }) => {
           onClick={() =>
             trackEvent("blog_click", props.item?.title ?? "unknown")
           }
-          href={props.item.url}
-          target="_blank"
+          // href={props.item.url}
+          href={`/blog/${props.item.title.toLowerCase().replace(/\s+/g, "-")}`}
+          // target="_blank"
           class="text-[#cbacf9] hover:underline capitalize"
         >
           Read more
@@ -59,11 +60,11 @@ const BlogCard = (props: { item: (typeof BlogData)[0]; index: number }) => {
 
       <div class="md:w-[300px] w-full h-[240px] md:rounded-r-3xl rounded-t-3xl md:rounded-t-none overflow-hidden flex-shrink-0">
         <img
-          width={200}
+          width={500}
           height={200}
           class="object-cover bg-cover bg-center w-full h-full"
           src={props.item.img}
-          alt=""
+          alt={props.item.title}
         />
       </div>
     </div>

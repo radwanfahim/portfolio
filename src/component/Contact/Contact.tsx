@@ -1,7 +1,6 @@
 import { For } from "solid-js";
 import LinkData from "../../api/LinkData";
 import bgContact from "../../assets/contact-bg.png";
-import Footer from "../../Shared/Footer/Footer";
 import { trackEvent } from "../../utils/analytics";
 
 const Contact = () => {
@@ -50,9 +49,6 @@ const Contact = () => {
           </For>
         }
       </div>
-
-      {/* footer */}
-      <Footer />
     </section>
   );
 };

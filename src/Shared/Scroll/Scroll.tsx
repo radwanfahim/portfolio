@@ -31,7 +31,7 @@ const Scroll = () => {
         class={`cursor-pointer fixed z-50 animate-bounce bottom-4 right-5 bg-transparent bg-radial-[at_50%_50%] backdrop-blur-md from-white/10 to-white/5 to-100% text-[#e4ecff] p-3 rounded-full shadow-lg transition-transform duration-300 ease-out ${
           isVisible() ? "translate-y-0" : "translate-y-30 "
         }`}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} // Example: Scroll to top on click
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         <div class="">
           <FaSolidArrowUp class="text-3xl" />

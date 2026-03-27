@@ -4,10 +4,12 @@ import "./App.css";
 import Nav from "./Shared/Nav/Nav";
 import Scroll from "./Shared/Scroll/Scroll";
 import { createSignal, onMount, Show, createEffect } from "solid-js";
-import type { ParentComponent } from "solid-js"; 
+import type { ParentComponent, ParentProps } from "solid-js";
 import Loading from "./component/Loading/Loading";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import BlogPage from "./component/Blog/BlogPage";
+import Footer from "./Shared/Footer/Footer";
 
 declare function gtag(...args: any[]): void;
 
@@ -37,6 +39,15 @@ function App() {
     }, 2000);
   });
 
+  function withnNav(props: ParentProps) {
+    return (
+      <>
+        <Nav />
+        {props.children}
+      </>
+    );
+  }
+
   return (
     <main>
       <Show when={loading()}>
@@ -44,10 +55,13 @@ function App() {
       </Show>
 
       <div class={loading() ? "hidden" : ""}>
-        <Nav />
         <Router root={RouteTracker}>
-          <Route path="/" component={Root} />
+          <Route component={withnNav}>
+            <Route path="/" component={Root} />
+            <Route path="/blog/:id" component={BlogPage} />
+          </Route>
         </Router>
+        <Footer />
         <Scroll />
       </div>
     </main>

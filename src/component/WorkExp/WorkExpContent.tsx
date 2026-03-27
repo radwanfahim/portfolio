@@ -23,7 +23,7 @@ const WorkExpContent = () => {
               <img
                 class="w-32 h-32 mx-auto object-cover"
                 src={item?.logo}
-                alt=""
+                alt={item.description}
               />
 
               <div class="md:mt-0 mt-10">
