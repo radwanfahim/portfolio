@@ -44,7 +44,7 @@ const BlogCard = (props: { item: (typeof BlogData)[0]; index: number }) => {
 
       <div class="pt-8 pb-8 pl-6">
         <h2 class="text-2xl font-bold mb-4 capitalize">{props.item?.title}</h2>
-        <p class="text-white/60 mb-4 line-clamp-2">{props.item?.description}</p>
+        <p class="text-white/60 mb-4 line-clamp-2">{props.item?.subtitle}</p>
         <a
           onClick={() =>
             trackEvent("blog_click", props.item?.title ?? "unknown")

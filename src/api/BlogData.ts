@@ -1,5 +1,6 @@
 interface Blog {
   title: string;
+  subtitle: string;
   description: string;
   img: string;
   url: string;
@@ -8,6 +9,8 @@ interface Blog {
 const BlogData: Blog[] = [
   {
     title: "5 Tips for Writing Clean and Maintainable Code",
+    subtitle:
+      "Writing clean, readable, and maintainable code is crucial for any software development project. Clean code enhances readability, reduces bugs, improves collaboration among developers, and eases the process of maintaining and updating codebases.",
     description: `Writing clean, readable, and maintainable code is crucial for any software development project. Clean code enhances readability, reduces bugs, improves collaboration among developers, and eases the process of maintaining and updating codebases. Here are five tips for writing clean and maintainable code:
 
 1) Use meaningful variable names: Naming conventions are vital for code readability. Your variable names should be descriptive and reflect their purpose in your code. This makes it easier for other developers to read and understand your code.
@@ -24,6 +27,8 @@ const BlogData: Blog[] = [
   },
   {
     title: "Website for business growth",
+    subtitle:
+      "A website can be a powerful tool for business growth in today's digital age. It serves as an online storefront that is accessible to customers worldwide, providing an opportunity to reach a larger audience and increase brand visibility.",
     description: `A website can be a powerful tool for business growth in today's digital age. It serves as an online storefront that is accessible to customers worldwide, providing an opportunity to reach a larger audience and increase brand visibility. Here are several ways in which a website can contribute to business growth:
 
 1. Increased online presence: With a website, your business can establish a strong online presence, allowing potential customers to find you easily. By optimizing your website for search engines (SEO), you can improve its visibility and rank higher in search results, attracting organic traffic. A well-designed website that showcases your products or services effectively can help you make a lasting impression on visitors and convert them into customers.
@@ -40,6 +45,8 @@ const BlogData: Blog[] = [
   },
   {
     title: "components for tailwind css",
+    subtitle:
+      "Tailwind CSS is a utility-first CSS framework that provides a collection of pre-designed CSS classes that can be used to build responsive and customizable user interfaces quickly.",
     description: `Tailwind CSS is a utility-first CSS framework that provides a collection of pre-designed CSS classes that can be used to build responsive and customizable user interfaces quickly.
 
 Tailwind CSS differs from other CSS frameworks, such as Bootstrap and Foundation, which come with pre-built components, such as navigation menus, buttons, and forms. Instead, Tailwind provides low-level utility classes to build your components, such as padding, margin, typography, and color.
@@ -81,6 +88,8 @@ Link: https://www.hyperui.dev/`,
   },
   {
     title: "5 key Skills for modern programmers",
+    subtitle:
+      "In today's rapidly evolving technology landscape, modern programmers need to possess a diverse set of skills to thrive in their careers. Here are five key skills that are essential for modern programmers:",
     description: `1) Collaboration: Today's projects require developers, designers, and product managers to work together seamlessly. Collaboration skills are essential to ensuring a project is completed on time and to specifications.
 
 2) Problem-Solving and Analytical Thinking: At the core of a programmer's role lies the ability to solve problems efficiently. Modern programmers must possess strong analytical thinking skills to break down complex challenges into manageable components. They should be able to approach problems from different angles, identify patterns, and devise creative solutions. Effective problem solvers also possess the ability to troubleshoot and debug code, minimizing errors and improving overall efficiency.
@@ -95,19 +104,21 @@ Link: https://www.hyperui.dev/`,
   },
   {
     title: "Why Every Business Needs a Website in 2026",
+    subtitle:
+      "In today's digital age, having a website is no longer a luxury but a necessity for businesses of all sizes.",
     description: `Most customers have already made up their mind before they walk through your door based on what they found online. If nothing comes up when they search your name, some of them will assume you’re closed, or too small to bother with, or not worth the trip.
-
-A website doesn’t fix a bad business. But a <a href="https://www.fiverr.com/radon_labs/design-a-high-converting-bigcommerce-store-as-your-dedicated-web-programmer" target="_blank">well-built business websitet</a> answers the basic questions where you are, what you do and when you’re open without you having to be there. Someone at midnight is wondering if your café opens on Saturdays? That’s handled.
-
-There’s also the dependency problem. Running everything through Facebook or Instagram means you’re permanently at the mercy of someone else’s platform. They adjust their algorithm, and your posts get buried. They have a dispute with you, and your page vanishes.<a href="https://www.fiverr.com/radon_labs/shopify-site-web-shopify-dropshipping-expert-amazon-dropshipping-shopify-revamp">Owning your web presence</a> puts you outside all of that.
-
-For some businesses, the website is the whole operation — appointments, payments, downloads. For others, it’s just the place people land to confirm you’re real. Either way, not having one means missing the part of the customer journey that happens before anyone picks up the phone.
-
-The cost barrier is lower than most people expect.<a href="https://www.fiverr.com/radon_labs/hauling-website-cargo-website-freight-website-transport-website-dispatch-website">A basic business website</a> doesn’t require a big budget the harder part is keeping it current. Wrong hours or a dead phone number is almost worse than no site at all. People show up, nothing matches, and they don’t come back.
-
-Last thing: a website doesn’t bring itself traffic. You still have to <a href="https://www.fiverr.com/users/radon_labs">drive people to it</a>. But you can’t build on something that doesn’t exist.`,
+    
+  A website doesn’t fix a bad business. But a <a href="https://www.fiverr.com/radon_labs/design-a-high-converting-bigcommerce-store-as-your-dedicated-web-programmer" target="_blank">well-built business websitet</a> answers the basic questions where you are, what you do and when you’re open without you having to be there. Someone at midnight is wondering if your café opens on Saturdays? That’s handled.
+    
+  There’s also the dependency problem. Running everything through Facebook or Instagram means you’re permanently at the mercy of someone else’s platform. They adjust their algorithm, and your posts get buried. They have a dispute with you, and your page vanishes.<a href="https://www.fiverr.com/radon_labs/shopify-site-web-shopify-dropshipping-expert-amazon-dropshipping-shopify-revamp">Owning your web presence</a> puts you outside all of that.
+    
+  For some businesses, the website is the whole operation — appointments, payments, downloads. For others, it’s just the place people land to confirm you’re real. Either way, not having one means missing the part of the customer journey that happens before anyone picks up the phone.
+    
+  The cost barrier is lower than most people expect.<a href="https://www.fiverr.com/radon_labs/hauling-website-cargo-website-freight-website-transport-website-dispatch-website">A basic business website</a> doesn’t require a big budget the harder part is keeping it current. Wrong hours or a dead phone number is almost worse than no site at all. People show up, nothing matches, and they don’t come back.
+    
+  Last thing: a website doesn’t bring itself traffic. You still have to <a href="https://www.fiverr.com/users/radon_labs">drive people to it</a>. But you can’t build on something that doesn’t exist.`,
     img: "/Why-Every-Business-Needs-a-Website-in-2026.png",
-    url: "https://radwanfahim.substack.com/p/why-every-business-needs-a-website",
+    url: "https://medium.com/@RadwanFahim/why-every-business-needs-a-website-in-2026-ad332d4c41a9",
   },
 ];
 

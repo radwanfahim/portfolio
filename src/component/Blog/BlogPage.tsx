@@ -46,13 +46,13 @@ export default function BlogDetail() {
         <div class="container mx-auto max-w-7xl px-4 sm:px-6">
           <div class="relative">
             <img
-              class="w-full object-cover aspect-[4/1.5] rounded-2xl brightness-20"
+              class="w-full object-cover sm:aspect-[4/1.5] aspect-video rounded-2xl brightness-20"
               loading="lazy"
               src={blog.img}
               alt={blog.title}
             />
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <h1 class="text-white text-6xl/snug text-center capitalize">
+              <h1 class="text-white sm:text-6xl/snug text-2xl/snug text-center capitalize">
                 {blog.title}
               </h1>
             </div>
@@ -68,9 +68,9 @@ export default function BlogDetail() {
                  prose-ol:text-gray-300"
             innerHTML={htmlContent()}
           />
-          <h1 class="text-blue-300 pt-10">
+          <h1 class="text-blue-300 pt-10 overflow-hidden text-ellipsis">
             Article link:{" "}
-            <a class="text-blue-600" href={blog.url}>
+            <a class="text-blue-600 " href={blog.url}>
               {blog.url}
             </a>
           </h1>
